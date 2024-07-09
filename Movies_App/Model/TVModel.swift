@@ -31,11 +31,11 @@ struct TVDatas              : Codable {
     let voteCount           : Int?
     
     var posterPathsURL: URL? {
-        return URL(string: Endpoints.getPosterPath(query: posterPath!))
+        return URL(string: Endpoints.getPosterPath(query: posterPath ?? ""))
     }
     
     var backDropPathURL: URL? {
-        return URL(string: Endpoints.getbackDropPath(query: backdropPath!))
+        return URL(string: Endpoints.getbackDropPath(query: backdropPath ?? ""))
     }
 }
 

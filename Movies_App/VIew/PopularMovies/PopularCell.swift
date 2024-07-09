@@ -135,16 +135,13 @@ extension PopularCell: UICollectionViewDelegate, UICollectionViewDataSource, UIC
         
         if offsetX > contentHeight - height {
             guard hasmoreMovies else {return}
-            showLoadingView()
             page += 1
             popularVM = PopularVM(client: HTTPClient(), delegate: self)
             popularVM?.getPopularDatas(page: page)
-//            stopLoadingView()
         }
     }
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-         showAnimation()
     }
 }
 
